@@ -1,0 +1,27 @@
+---
+- fail:
+    msg:
+      unsupported debian_version {{ ansible_lsb.codename }}
+  when: ansible_lsb.codename not in salt_debian_versions
+
+
+- name: add apt repo
+  template:
+    src=templates/{{ ansible_distribution }}.j2
+    dest=/etc/apt/sources.list.d/saltstack.list
+    owner=root
+    group=root
+    mode=0644
+  register: result_repo
+
+
+- name: add apt key
+  apt_key: 
+    url="https://repo.saltstack.com/apt/debian/{{ salt_debian_versions[ansible_lsb.codename].version }}/amd64/{{ salt_version }}/SALTSTACK-GPG-KEY.pub"
+    state=present
+  register: result_key
+
+
+- name: update apt cache
+  apt: update_cache=yes
+  when: result_repo|changed or result_key|changed

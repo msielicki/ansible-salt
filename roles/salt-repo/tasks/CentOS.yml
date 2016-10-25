@@ -1,0 +1,20 @@
+---
+- fail:
+    msg:
+      unsupported centos_version {{ ansible_distribution_major_version }}
+  when: ansible_distribution_major_version not in salt_centos_versions
+
+
+- name: add yum repo
+  template:
+    src=templates/{{ ansible_distribution }}.j2
+    dest=/etc/yum.repos.d/saltstack.repo
+    owner=root
+    group=root
+    mode=0644
+  register: result_repo
+
+
+- name: update yum cache
+  shell: yum clean all
+  when: result_repo|changed

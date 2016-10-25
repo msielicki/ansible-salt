@@ -1,0 +1,8 @@
+---
+- fail: 
+    msg:
+      unsupported salt_version {{ salt_version }}
+  when: salt_version not in salt_versions
+
+
+- include: "{{ ansible_distribution }}.yml"

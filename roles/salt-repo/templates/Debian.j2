@@ -1,0 +1,2 @@
+{% set debian_var = salt_debian_versions[ansible_lsb.codename] | default("") -%}
+deb http://repo.saltstack.com/apt/debian/{{ debian_var.version }}/amd64/{{ salt_version }} {{ debian_var.codename }} main
