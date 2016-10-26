@@ -1,7 +1,8 @@
 ---
-- fail:
+- name: test var debian_version
+  fail:
     msg:
-      unsupported debian_version {{ ansible_lsb.codename }}
+      Unsupported debian_version {{ ansible_lsb.codename }}
   when: ansible_lsb.codename not in salt_debian_versions
 
 
@@ -25,3 +26,4 @@
 - name: update apt cache
   apt: update_cache=yes
   when: result_repo|changed or result_key|changed
+

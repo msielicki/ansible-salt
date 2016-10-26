@@ -16,5 +16,5 @@
 
 
 - name: update yum cache
-  shell: yum clean all
+  shell: yum clean expire-cache
   when: result_repo|changed

@@ -1,0 +1,56 @@
+---
+salt_versions: 
+  - latest
+  - 2016.3
+  - 2015.8
+  - archive/2015.8.1
+  - archive/2015.8.2
+  - archive/2015.8.3
+  - archive/2015.8.4
+  - archive/2015.8.5
+  - archive/2015.8.6
+  - archive/2015.8.7
+  - archive/2015.8.8
+  - archive/2015.8.8.2
+  - archive/2015.8.9
+  - archive/2015.8.10
+  - archive/2015.8.11
+  - archive/2015.8.12
+  - archive/2016.3.0
+  - archive/2016.3.1
+  - archive/2016.3.2
+  - archive/2016.3.3
+
+
+salt_debian_versions:
+  wheezy:
+    version: 7
+    codename: wheezy
+  jessie:
+    version: 8
+    codename: jessie
+  stretch:
+    version: 8
+    codename: jessie
+
+
+salt_ubuntu_versions:    
+  precise:
+    version: 12.04
+    codename: precise
+  trusty:  
+    version: 14.04
+    codename: trusty
+  xenial:
+    version: 16.04
+    codename: xenial
+
+
+salt_centos_versions:
+  - "6"
+  - "7"
+
+
+salt_redhat_versions:
+  - "6"
+  - "7"    
