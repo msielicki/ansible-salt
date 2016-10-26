@@ -53,4 +53,5 @@ salt_centos_versions:
 
 salt_redhat_versions:
   - "6"
-  - "7"    
+  - "7"   
+

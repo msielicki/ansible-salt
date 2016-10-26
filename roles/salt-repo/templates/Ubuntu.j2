@@ -1,2 +1,3 @@
 {% set ubuntu_var = salt_ubuntu_versions[ansible_lsb.codename] | default("") -%}
 deb http://repo.saltstack.com/apt/ubuntu/{{ ubuntu_var.version }}/amd64/{{ salt_version }} {{ ubuntu_var.codename }} main
+
