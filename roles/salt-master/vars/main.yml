@@ -1,7 +1,7 @@
 ---
 salt_master:
-  interface: {{ salt_master_interface }}
-  publish_port: {{ salt_master_publish_port }} 
-  ret_port: {{ salt_master_ret_port }}
-  hash_type: {{ salt_master_hash_type }}
-  ipv6: {{ salt_master_ipv6 }}
+  interface: "{{ salt_master_interface }}"
+  publish_port: "{{ salt_master_publish_port }}" 
+  ret_port: "{{ salt_master_ret_port }}"
+  hash_type: "{{ salt_master_hash_type }}"
+  ipv6: "{{ salt_master_ipv6 }}"
