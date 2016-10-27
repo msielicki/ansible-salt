@@ -1,6 +1,7 @@
 ---
-salt_master:
-  interface: 0.0.0.0
-  publish_port: 4505
-  ret_port: 4506
-  hash_type: sha256
+salt_master_interface: 0.0.0.0
+salt_master_publish_port: 4505
+salt_master_ret_port: 4506
+salt_master_hash_type: sha256
+salt_master_ipv6: False
+
