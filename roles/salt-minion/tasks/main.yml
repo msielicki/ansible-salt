@@ -1,1 +1,52 @@
 ---
+- fail: 
+    msg: 
+      undefined salt_minion.master
+  when: salt_minion['master'] == ''
+
+
+- fail:
+    msg:
+      undefined salt_minion.id
+  when: salt_minion['id'] == ''
+
+
+- name: install pkgs
+  package: 
+    name=salt-minion
+    state=latest
+
+
+- name: enable service
+  service: 
+    name=salt-minion 
+    enabled=yes
+    state=started
+
+
+- name: config
+  template:
+    src=templates/config.j2
+    dest=/etc/salt/minion.d/config.conf
+    owner=root
+    group=root
+    mode=0644
+  register: config
+
+
+- name: set id
+  template:
+    src=templates/id.j2
+    dest=/etc/salt/minion_id
+    owner=root
+    group=root
+    mode=0644
+  register: id  
+
+
+- name: restart service
+  service:
+    name=salt-minion
+    state=restarted
+  when: config|changed or id|changed
+

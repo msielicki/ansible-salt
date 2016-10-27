@@ -1,1 +1,5 @@
 ---
+salt_minion.id: '' 
+salt_minion.master: '' 
+salt_minion.port: 4506
+salt_minion.hash_type: sha256

@@ -1,1 +1,30 @@
 ---
+- name: install pkgs
+  package: 
+    name=salt-master 
+    state=latest
+
+
+- name: enable service
+  service: 
+    name=salt-master 
+    enabled=yes
+    state=started
+
+
+- name: config
+  template:
+    src=templates/config.j2
+    dest=/etc/salt/master.d/config.conf
+    owner=root
+    group=root
+    mode=0644
+  register: config
+
+
+- name: restart service
+  service:
+    name=salt-master
+    state=restarted
+  when: config|changed
+
