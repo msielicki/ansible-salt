@@ -1,0 +1,7 @@
+---
+salt_minion:
+  id: "{{ salt_minion_id }}"
+  master: "{{ salt_minion_master }}" 
+  master_port: "{{ salt_minion_master_port }}"
+  hash_type: "{{ salt_minion_hash_type }}"
+  ipv6: "{{ salt_minion_ipv6 }}"

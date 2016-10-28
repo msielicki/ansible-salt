@@ -3,10 +3,10 @@
 master: {{ salt_minion.master }}
 
 # Set the port used by the master reply and authentication server.
-master_port: {{ salt_minion.port }}
+master_port: {{ salt_minion.master_port }}
 
 # Set whether the minion should connect to the master via IPv6:
-ipv6: False
+ipv6: {{ salt_minion.ipv6 }}
 
 # The hash_type is the hash to use when discovering the hash of a file on
 # the master server. The default is md5 but sha1, sha224, sha256, sha384
