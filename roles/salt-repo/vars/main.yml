@@ -20,6 +20,7 @@ salt_versions:
   - archive/2016.3.1
   - archive/2016.3.2
   - archive/2016.3.3
+  - archive/2016.3.4
 
 
 salt_debian_versions:
