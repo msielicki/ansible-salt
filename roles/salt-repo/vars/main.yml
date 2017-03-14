@@ -17,13 +17,17 @@ salt_versions:
   - archive/2015.8.10
   - archive/2015.8.11
   - archive/2015.8.12
+  - archive/2015.8.13
   - archive/2016.3.0
   - archive/2016.3.1
   - archive/2016.3.2
   - archive/2016.3.3
   - archive/2016.3.4
+  - archive/2016.3.5
   - archive/2016.11.0
   - archive/2016.11.1
+  - archive/2016.11.2
+  - archive/2016.11.3
 
 
 salt_debian_versions:
