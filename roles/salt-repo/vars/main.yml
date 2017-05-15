@@ -24,10 +24,12 @@ salt_versions:
   - archive/2016.3.3
   - archive/2016.3.4
   - archive/2016.3.5
+  - archive/2016.3.6
   - archive/2016.11.0
   - archive/2016.11.1
   - archive/2016.11.2
   - archive/2016.11.3
+  - archive/2016.11.4
 
 
 salt_debian_versions:
